@@ -1,0 +1,22 @@
+header {
+  background-color: rgb(91, 87, 87);
+}
+
+.navbar {
+  ul {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  a,
+  a:visited {
+    text-decoration: none;
+    color: rgb(230, 219, 219);
+  }
+
+  a.activeLink {
+    font-weight: 500;
+    color: rgb(157, 168, 188);
+  }
+}

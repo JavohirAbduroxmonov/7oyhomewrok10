@@ -1,0 +1,86 @@
+// Variables
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$font-family: 'Arial, sans-serif';
+$background-color: #f8f9fa;
+$border-color: #ddd;
+$hover-color: lighten($primary-color, 10%);
+$text-color: #212529;
+
+// Mixin
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// Product styles
+.product {
+    font-family: $font-family;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 400px;
+    border: 1px solid $border-color;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: $background-color;
+    transition: transform 0.3s, box-shadow 0.3s;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+        color: $primary-color;
+        margin-bottom: 15px;
+        text-align: center;
+        transition: color 0.3s;
+
+        &:hover {
+            color: $hover-color;
+        }
+    }
+
+    img {
+        @include flex-center;
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 15px;
+    }
+
+    p {
+        color: $text-color;
+        margin-bottom: 15px;
+        line-height: 1.5;
+
+        &.price {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: $primary-color;
+            text-align: center;
+        }
+
+        &.category {
+            font-style: italic;
+            color: darken($secondary-color, 20%);
+            text-align: center;
+        }
+    }
+
+    // Additional styles for product details
+    .product-details {
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+
+        .detail-item {
+            padding: 10px;
+            background-color: lighten($background-color, 10%);
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+    }
+}
